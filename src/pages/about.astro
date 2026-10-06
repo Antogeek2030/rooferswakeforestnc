@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+const phone = '+19195550199';
+const phoneDisplay = '(919) 555-0199';
+---
+<Layout title="About Us | Roofers Wake Forest NC" description="Local licensed roofing contractors serving Wake Forest and northern Wake County. Same-day repairs, free estimates, written workmanship guarantee.">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">Home</a> → About Us</div>
+      <h1>About Roofers Wake Forest NC</h1>
+      <p>Local crews focused on one thing: protecting Wake Forest homes with honest roofing repair and replacement.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container content-block">
+      <h2>Who We Are</h2>
+      <p>We are a licensed, insured roofing team based in Wake Forest. Our focus is residential roof repair, replacement, storm damage restoration, and inspections — asphalt shingles, architectural systems, metal, and flat roofs. We know the housing stock, the storm patterns, and the North Carolina code requirements that apply here.</p>
+      <h2>How We Work</h2>
+      <ul>
+        <li><strong>Upfront pricing</strong> — Written estimate before any work begins. No surprise charges.</li>
+        <li><strong>Same-day priority</strong> — Most diagnostic and emergency calls are completed the day you call when weather allows.</li>
+        <li><strong>Honest repair vs. replace advice</strong> — We will not push a full replacement when a solid repair will restore years of protection.</li>
+        <li><strong>Code-compliant work</strong> — Proper underlayment, flashing, ventilation, and fastening done right the first time.</li>
+        <li><strong>Written workmanship guarantee</strong> — We stand behind every repair and installation.</li>
+      </ul>
+      <h2>Our Location</h2>
+      <p>12805 Camp Kanata Rd, Wake Forest, NC 27587. We serve Wake Forest, Rolesville, Youngsville, Franklinton, northern Raleigh, and surrounding communities in northern Wake County.</p>
+      <div style="margin-top:2rem;text-align:center"><a href={`tel:${phone}`} class="btn btn-primary">Call {phoneDisplay}</a></div>
+    </div>
+  </section>
+</Layout>

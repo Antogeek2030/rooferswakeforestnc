@@ -1,0 +1,75 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { 
+  title = 'Roofers Wake Forest NC | Roof Repair & Replacement',
+  description = 'Trusted local roofers in Wake Forest, NC. Same-day roof repair, replacement, leak fixes, and storm damage service. Licensed, insured, free estimates.'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/', Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.href} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "RoofingContractor",
+      "name": "Roofers Wake Forest NC",
+      "url": "https://rooferswakeforestnc.com",
+      "telephone": "+1-919-555-0199",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12805 Camp Kanata Rd",
+        "addressLocality": "Wake Forest",
+        "addressRegion": "NC",
+        "postalCode": "27587",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.9799,
+        "longitude": -78.5097
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "priceRange": "$$",
+      "areaServed": {"@type": "City", "name": "Wake Forest"},
+      "description": description
+    })} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <a href="tel:+19195550199" class="float-phone" aria-label="Call now">📞</a>
+  </body>
+</html>

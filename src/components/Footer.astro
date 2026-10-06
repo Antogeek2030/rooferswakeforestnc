@@ -1,0 +1,41 @@
+---
+const phone = '+19195550199';
+const phoneDisplay = '(919) 555-0199';
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Roofers Wake Forest NC</h4>
+        <p>Licensed roofing contractors serving Wake Forest and northern Wake County. Roof repair, replacement, leak fixes, and storm damage restoration with upfront pricing and written guarantees.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <p><a href="/services/emergency-roof-repair/">Emergency Repair</a></p>
+        <p><a href="/services/roof-leak-repair/">Leak Repair</a></p>
+        <p><a href="/services/roof-replacement/">Roof Replacement</a></p>
+        <p><a href="/services/roof-inspection/">Inspection</a></p>
+        <p><a href="/services/storm-damage-repair/">Storm Damage</a></p>
+      </div>
+      <div>
+        <h4>Common Problems</h4>
+        <p><a href="/problems/roof-leaks/">Roof Leaks</a></p>
+        <p><a href="/problems/missing-shingles/">Missing Shingles</a></p>
+        <p><a href="/problems/storm-damage/">Storm Damage</a></p>
+        <p><a href="/problems/sagging-roof/">Sagging Roof</a></p>
+        <p><a href="/problems/water-stains/">Water Stains</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href={`tel:${phone}`}>{phoneDisplay}</a></p>
+        <p>12805 Camp Kanata Rd<br />Wake Forest, NC 27587</p>
+        <p>Open 24 / 7 for emergencies</p>
+        <p style="margin-top:0.75rem"><a href="/service-areas/">Service Areas</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© {year} Roofers Wake Forest NC. All rights reserved. | <a href="/privacy/">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>

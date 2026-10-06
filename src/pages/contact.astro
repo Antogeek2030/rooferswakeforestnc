@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+const phone = '+19195550199';
+const phoneDisplay = '(919) 555-0199';
+---
+<Layout title="Contact | Roofers Wake Forest NC" description="Contact Roofers Wake Forest NC for same-day roof service. Call (919) 555-0199. Located at 12805 Camp Kanata Rd, Wake Forest, NC 27587.">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">Home</a> → Contact</div>
+      <h1>Contact Us</h1>
+      <p>Ready for same-day roofing service in Wake Forest? Call or reach out below.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="content-block" style="margin:0">
+          <h2>Get in Touch</h2>
+          <p><strong>Phone (24/7):</strong> <a href={`tel:${phone}`} style="color:var(--primary)">{phoneDisplay}</a></p>
+          <p><strong>Address:</strong><br />12805 Camp Kanata Rd<br />Wake Forest, NC 27587</p>
+          <p><strong>Hours:</strong> Emergency service available 24 hours a day, 7 days a week. Standard scheduling during regular business hours.</p>
+          <p style="margin-top:1.5rem"><a href={`tel:${phone}`} class="btn btn-primary">Call Now</a></p>
+        </div>
+        <div>
+          <div class="map-wrapper" style="height:320px">
+            <iframe title="Map" src="https://www.openstreetmap.org/export/embed.html?bbox=-78.5197%2C35.9699%2C-78.4997%2C35.9899&amp;layer=mapnik&amp;marker=35.9799%2C-78.5097" loading="lazy" style="width:100%;height:100%;border:0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

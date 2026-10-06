@@ -1,0 +1,76 @@
+---
+const phone = '+19195550199';
+const phoneDisplay = '(919) 555-0199';
+const currentPath = Astro.url.pathname;
+---
+<header class="header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <span class="logo-icon">🏠</span>
+      <span class="logo-text">Roofers<br /><small>Wake Forest, NC</small></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
+
+      <div class="dropdown">
+        <button class="dropdown-toggle" aria-expanded="false">Our Services <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="/services/emergency-roof-repair/">Emergency Roof Repair</a>
+          <a href="/services/roof-leak-repair/">Roof Leak Repair</a>
+          <a href="/services/roof-replacement/">Roof Replacement</a>
+          <a href="/services/roof-inspection/">Roof Inspection</a>
+          <a href="/services/storm-damage-repair/">Storm Damage Repair</a>
+          <a href="/services/roof-maintenance/">Roof Maintenance</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropdown-toggle" aria-expanded="false">Problems <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="/problems/roof-leaks/">Roof Leaks</a>
+          <a href="/problems/missing-shingles/">Missing or Damaged Shingles</a>
+          <a href="/problems/storm-damage/">Storm &amp; Hail Damage</a>
+          <a href="/problems/sagging-roof/">Sagging Roof</a>
+          <a href="/problems/water-stains/">Ceiling Water Stains</a>
+          <a href="/problems/gutter-problems/">Gutter Problems</a>
+        </div>
+      </div>
+
+      <a href="/service-areas/">Service Areas</a>
+      <a href="/about/">About Us</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+
+    <a href={`tel:${phone}`} class="header-phone">
+      <span>📞</span>
+      <span class="phone-text">{phoneDisplay}</span>
+    </a>
+    <button class="mobile-toggle" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<script>
+  // Mobile menu
+  const btn = document.getElementById('menuBtn');
+  const nav = document.getElementById('nav');
+  btn?.addEventListener('click', () => nav?.classList.toggle('open'));
+
+  // Dropdowns (click on mobile, hover on desktop handled by CSS)
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parent = toggle.closest('.dropdown');
+      const isOpen = parent?.classList.contains('open');
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+      if (!isOpen) parent?.classList.add('open');
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
+</script>

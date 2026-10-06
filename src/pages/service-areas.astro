@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+const phone = '+19195550199';
+const phoneDisplay = '(919) 555-0199';
+---
+<Layout title="Service Areas | Roofers Wake Forest & Northern Wake County" description="Roofing service areas: Wake Forest, Rolesville, Youngsville, Franklinton, northern Raleigh and surrounding northern Wake County communities.">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">Home</a> → Service Areas</div>
+      <h1>Areas We Serve</h1>
+      <p>Based in Wake Forest, we provide same-day roof repair, replacement, and storm damage service throughout northern Wake County.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container content-block">
+      <h2>Primary Service Area</h2>
+      <p>We focus on Wake Forest and the surrounding communities where we can maintain fast response times:</p>
+      <ul>
+        <li>Wake Forest</li>
+        <li>Rolesville</li>
+        <li>Youngsville</li>
+        <li>Franklinton</li>
+        <li>Northern Raleigh</li>
+        <li>Heritage</li>
+        <li>Traditions</li>
+        <li>Falls Lake area</li>
+        <li>Knightdale (northern)</li>
+        <li>Surrounding northern Wake County</li>
+      </ul>
+      <p>If you are just outside these areas, call us — we frequently accommodate nearby locations depending on schedule.</p>
+      <h2>Our Address</h2>
+      <p>12805 Camp Kanata Rd, Wake Forest, NC 27587</p>
+      <div class="map-wrapper" style="height:380px;margin:1.5rem 0">
+        <iframe title="Service area map" src="https://www.openstreetmap.org/export/embed.html?bbox=-78.5197%2C35.9699%2C-78.4997%2C35.9899&amp;layer=mapnik&amp;marker=35.9799%2C-78.5097" loading="lazy" style="width:100%;height:100%;border:0"></iframe>
+      </div>
+      <div style="text-align:center;margin-top:1.5rem">
+        <a href={`tel:${phone}`} class="btn btn-primary">Call {phoneDisplay} for Service</a>
+      </div>
+    </div>
+  </section>
+</Layout>
